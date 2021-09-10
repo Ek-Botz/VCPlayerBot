@@ -32,7 +32,7 @@ async def add_to_playlist(_, message: Message):
     if Config.ADMIN_ONLY == "Y":
         admins = await get_admins(Config.CHAT)
         if message.from_user.id not in admins:
-            await message.reply_sticker("CAADBQADsQIAAtILIVYld1n74e3JuQI")
+            await message.reply_sticker("CAACAgUAAxkBAALL72E65AEUjtdvVE2xKdXnAAFJTqf4cgAC8AIAAtFEAAFXDyV4cqweTQogBA")
             return
     type=""
     yturl=""
@@ -218,9 +218,9 @@ allcmd = ["play", "player", f"play@{Config.BOT_USERNAME}", f"player@{Config.BOT_
 async def not_chat(_, m: Message):
     buttons = [
         [
-            InlineKeyboardButton('⚡️Make Own Bot', url='https://github.com/subinps/VCPlayerBot'),
-            InlineKeyboardButton('🧩 Join Here', url='https://t.me/subin_works'),
+            InlineKeyboardButton('⚡️ GitHub', url='https://github.com/M-fazin/'),
+            InlineKeyboardButton('🧩 Join Channel', url='https://t.me/EKBOTZ_UPDATE'),
         ]
         ]
-    await m.reply("<b>You can't use this bot in this group, for that you have to make your own bot from the [SOURCE CODE](https://github.com/subinps/VCPlayerBot) below.</b>", disable_web_page_preview=True, reply_markup=InlineKeyboardMarkup(buttons))
+    await m.reply("<b>You can't use this bot in this group, I Am Only Work In @EKBOTZ_UPDATE.</b>", disable_web_page_preview=True, reply_markup=InlineKeyboardMarkup(buttons))
 
