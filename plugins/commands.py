@@ -21,15 +21,15 @@ from config import Config
 from logger import LOGGER
 import os
 
-HOME_TEXT = "<b>Hey  [{}](tg://user?id={}) 🙋‍♂️\n\nIam A Bot Built To Play or Stream Videos In Telegram VoiceChats.\nI Can Stream Any YouTube Video Or A Telegram File Or Even A YouTube Live.</b>"
+HOME_TEXT = "<b>Hey  [{}](tg://user?id={}) 🙋‍♂️\n\nI Am Music Streamer Bot Of @EKBOTZ_UPDATE. \nJoin The Channel & Watch Musics & Anything</b>"
 admin_filter=filters.create(is_admin) 
 
 @Client.on_message(filters.command(['start', f"start@{Config.BOT_USERNAME}"]))
 async def start(client, message):
     buttons = [
         [
-            InlineKeyboardButton('⚙️ Update Channel', url='https://t.me/subin_works'),
-            InlineKeyboardButton('🧩 Source', url='https://github.com/subinps/VCPlayerBot')
+            InlineKeyboardButton('⚙️ Channel', url='https://t.me/EKBOTZ_UPDATE'),
+            InlineKeyboardButton('🧩 GitHub', url='https://github.com/M-fazin/')
         ],
         [
             InlineKeyboardButton('👨🏼‍🦯 Help', callback_data='help'),
@@ -44,8 +44,8 @@ async def start(client, message):
 async def show_help(client, message):
     buttons = [
         [
-            InlineKeyboardButton('⚙️ Update Channel', url='https://t.me/subin_works'),
-            InlineKeyboardButton('🧩 Source', url='https://github.com/subinps/VCPlayerBot'),
+            InlineKeyboardButton('⚙️ Channel', url='https://t.me/EKBOTZ_UPDATE'),
+            InlineKeyboardButton('🧩 GitHub', url='https://github.com/M-fazin/'),
         ]
         ]
     reply_markup = InlineKeyboardMarkup(buttons)
@@ -55,16 +55,6 @@ async def show_help(client, message):
         Config.HELP,
         reply_markup=reply_markup
         )
-@Client.on_message(filters.command(['repo', f"repo@{Config.BOT_USERNAME}"]))
-async def repo_(client, message):
-    buttons = [
-        [
-            InlineKeyboardButton('🧩 Repository', url='https://github.com/subinps/VCPlayerBot'),
-            InlineKeyboardButton('⚙️ Update Channel', url='https://t.me/subin_works'),
-            
-        ],
-    ]
-    await message.reply("<b>The source code of this bot is public and can be found at <a href=https://github.com/subinps/VCPlayerBot>VCPlayerBot.</a>\nYou can deploy your own bot and use in your group.\n\nFeel free to star☀️ the repo if you liked it 🙃.</b>", reply_markup=InlineKeyboardMarkup(buttons))
 
 @Client.on_message(filters.command(['restart', 'update', f"restart@{Config.BOT_USERNAME}", f"update@{Config.BOT_USERNAME}"]) & admin_filter)
 async def update_handler(client, message):
